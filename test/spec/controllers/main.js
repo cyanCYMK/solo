@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('201412SoloApp'));
+  beforeEach(module('HReadly'));
 
   var MainCtrl,
     scope;

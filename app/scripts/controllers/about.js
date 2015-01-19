@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the 201412SoloApp
  */
-angular.module('201412SoloApp')
+angular.module('HReadly')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

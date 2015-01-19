@@ -9,7 +9,8 @@
  * Main module of the application.
  */
 angular
-  .module('201412SoloApp', [
+  .module('HReadly', [
+    'HReadly.services',
     'ngAnimate',
     'ngCookies',
     'ngResource',
