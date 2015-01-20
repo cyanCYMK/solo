@@ -12,6 +12,7 @@ angular
   .module('HReadly', [
     'HReadly.services',
     'feeds',
+    'firebase',
     'ngAnimate',
     'ngCookies',
     'ngResource',

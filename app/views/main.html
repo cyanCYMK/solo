@@ -7,33 +7,15 @@
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div> -->
 <h1>the HR feed</h1>
-<div>
-  URL: <input ng-model="newFeed.url">
-  <button ng-click="addFeed(newFeed)">Add Feed</button>
+<div ng-controller="MainCtrl">
+  <form>
+    <label for="newurl">URL: </label>
+    <input type="text" id="newurl" name="newurl" ng-model="newUrl.url" />
+    <button ng-click="addFeed()">Add Feed</button>
+  </form>
+  <div ng-repeat="feed in feeds">
+    <pre>{{ feed.url }}</pre>
+  </div>
 </div>
 
-<feed summary="true" url="http://www.heyitschristine.com/rss/" count="5"/>
-
-<div ng-repeat="feed in feeds">
-  <ul>
-    <li ng-repeat="item in feed.items">
-      URL: <input ng-model="feed.url">
-      <button ng-click="fetchFeed(feed)">Update</button>
-      <button ng-click="deleteFeed(feed)">Delete</button>
-      <span class="blogurl"></span><br />
-      <span class="title">{{ item.title }}</span><br />
-      <span class="date">{{ item.updated }}</span><br />
-      <span class="posturl">{{ item.id }}</span><br />
-      <span class="content">item.content truncated</span>
-    </li>
-  </ul>
-</div>
-
-<!-- <ul>
-  <li ng-repeat="item in feed">
-    <span class="title">{{ item.title }}</span><br />
-    <span class="date">{{ item.updated }}</span><br />
-    <span class="url">{{ item.id }}</span><br />
-    <span class="content">item.content truncated</span>
-  </li>
-</ul> -->
+<!-- <feed summary="true" url="http://www.heyitschristine.com/rss/" count="5"/> -->
