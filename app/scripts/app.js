@@ -11,13 +11,13 @@
 angular
   .module('HReadly', [
     'HReadly.services',
-    'feeds',
     'firebase',
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'feeds',
     'ngTouch'
   ])
   .config(function ($routeProvider) {

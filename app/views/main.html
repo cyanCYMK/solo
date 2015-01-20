@@ -13,9 +13,19 @@
     <input type="text" id="newurl" name="newurl" ng-model="newUrl.url" />
     <button ng-click="addFeed()">Add Feed</button>
   </form>
-  <div ng-repeat="feed in feeds">
-    <pre>{{ feed.url }}</pre>
+
+  <div>
+    <h4>Test Feed</h4>
+    <feed summary="true" url="{{feeds[0].url}}" count="5"/>
   </div>
+
+
+
+<!--   <div ng-repeat="feed in feeds">
+    <pre>{{ feed.url }}</pre>
+    <feed summary="true" url={{feed.url}} count="5"/>
+  </div> -->
+
 </div>
 
-<!-- <feed summary="true" url="http://www.heyitschristine.com/rss/" count="5"/> -->
+

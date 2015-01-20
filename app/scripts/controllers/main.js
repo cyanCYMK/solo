@@ -15,7 +15,9 @@ angular.module('HReadly')
     // var syncObject = sync.$asObject();
     // syncObject.$bindTo($scope, 'feeds');
 
-    $scope.feeds = sync.$asArray();
+    // $scope.feeds = sync.$asArray();
+    // testing to see if it's a firebase issue. NO it's not
+    $scope.feeds = [{url:'http://jzaratan.azurewebsites.net/rss/'}, {url:'http://sunnygblog.azurewebsites.net/rss/'}]
     console.log('scope.feeds:', $scope.feeds);
 
     $scope.newUrl = {url: 'http://'};
@@ -24,10 +26,12 @@ angular.module('HReadly')
       $scope.feeds.$add($scope.newUrl);
     }
 
-    ref.on('value', function(snapshot){
-      // console.log(snapshot);
-    }, function(errorObject){
-      console.log('The read failed:', errorObject.code);
-    }) 
+    // manually set feed url to be feed.url
+
+    // ref.on('value', function(snapshot){
+    //   // console.log(snapshot);
+    // }, function(errorObject){
+    //   console.log('The read failed:', errorObject.code);
+    // }) 
     
   });
