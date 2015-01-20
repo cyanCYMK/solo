@@ -1,29 +1,39 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div> -->
+<h1>the HR feed</h1>
+<div>
+  URL: <input ng-model="newFeed.url">
+  <button ng-click="addFeed(newFeed)">Add Feed</button>
 </div>
 
-<ul>
+<feed summary="true" url="http://www.heyitschristine.com/rss/" count="5"/>
+
+<div ng-repeat="feed in feeds">
+  <ul>
+    <li ng-repeat="item in feed.items">
+      URL: <input ng-model="feed.url">
+      <button ng-click="fetchFeed(feed)">Update</button>
+      <button ng-click="deleteFeed(feed)">Delete</button>
+      <span class="blogurl"></span><br />
+      <span class="title">{{ item.title }}</span><br />
+      <span class="date">{{ item.updated }}</span><br />
+      <span class="posturl">{{ item.id }}</span><br />
+      <span class="content">item.content truncated</span>
+    </li>
+  </ul>
+</div>
+
+<!-- <ul>
   <li ng-repeat="item in feed">
-    <span>{{ item.title }}</span><span>{{ item.updated }}</span>
+    <span class="title">{{ item.title }}</span><br />
+    <span class="date">{{ item.updated }}</span><br />
+    <span class="url">{{ item.id }}</span><br />
+    <span class="content">item.content truncated</span>
   </li>
-</ul>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+</ul> -->
